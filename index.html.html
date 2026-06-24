@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>呂氏暨許氏家族族譜樹 - 空間擴張版</title>
+    <style>
+        :root {
+            --line-color: #a0aec0;
+            --box-bg: #ffffff;
+            --box-border: #4a5568;
+            --text-color: #2d3748;
+        }
+        body {
+            font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 40px 0;
+            text-align: center;
+        }
+        h1 {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            margin: 0;
+            padding: 15px 0;
+            color: var(--text-color);
+            background-color: rgba(247, 250, 252, 0.95);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+        .canvas-container {
+            position: relative;
+            width: 10000px;
+            height: 1100px;
+            background-color: #ffffff;
+            border: 1px dashed #cbd5e0;
+            margin: 90px auto 20px auto;
+            text-align: left;
+        }
+        .member-card {
+            position: absolute;
+            background: var(--box-bg);
+            border: 2px solid var(--box-border);
+            border-radius: 50px;
+            padding: 10px 20px;
+            width: 134px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            z-index: 10;
+        }
+        .member-card:hover {
+            transform: translateY(-3px);
+            background-color: #edf2f7;
+            border-color: #3182ce;
+        }
+        .photo-placeholder {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #cbd5e0;
+            margin: 0 auto 6px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #718096;
+            font-size: 11px;
+            border: 2px solid #fff;
+        }
+        .name { font-weight: bold; font-size: 15px; color: var(--text-color); }
+        .birthday { font-size: 11px; color: #718096; margin-top: 2px; }
+        #bg-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+    </style>
+<script src="family_stories.js"></script>
+</head>
+<body>
+    <h1>采妮家族</h1>
+    <div class="canvas-container" style="height: 1100px;">
+        <svg id="bg-svg">
+            <g stroke="#a0aec0" stroke-width="2" fill="none">
+                <!-- 1. 核心祖父母：呂再興與黃玉英的水平婚姻線（向右大平移） -->
+                <line x1="6569" y1="90" x2="6755" y2="90" />
+                <line x1="6662" y1="90" x2="6662" y2="170" />
+                
+                <!-- 2. 第二代總分流橫線（大房極左擴展至 1050px，擴大左側空間） -->
+                <line x1="1050" y1="170" x2="8400" y2="170" />
+                <line x1="1050" y1="170" x2="1050" y2="250" /> <!-- 1. 大房 呂天貴（大幅往左靠） -->
+                <line x1="2050" y1="170" x2="2050" y2="250" /> <!-- 2. 二房 呂彩鳳（拉大間距） -->
+                <line x1="3489" y1="170" x2="3489" y2="250" /> <!-- 3. 三房 呂春狼（1.3倍地心級大爆發空間） -->
+                
+		<line x1="5106" y1="170" x2="5106" y2="250" /> <!-- 4. 四房 呂春成（放大1倍空間） -->
+                
+		<line x1="5600" y1="170" x2="5600" y2="250" /> <!-- 5. 五房 呂彩美 -->
+                <line x1="6662" y1="170" x2="6662" y2="250" /> <!-- 6. 核心六房 呂采妮（全新右移核心中軸） -->
+                <line x1="7550" y1="170" x2="7550" y2="250" /> <!-- 7. 七房 呂美瑤 -->
+                <line x1="8400" y1="170" x2="8400" y2="250" /> <!-- 8. 八房 呂文正 -->
+                <!-- === 三房：呂春狼與夏素真離婚分支 === -->
+                <line x1="3312" y1="300" x2="3417" y2="300" stroke-dasharray="5,5" />
+                <line x1="3389" y1="300" x2="3389" y2="450" /> 
+                <line x1="2889" y1="450" x2="3889" y2="450" /> 
+                <line x1="2889" y1="450" x2="2889" y2="520" /> 
+                <line x1="3139" y1="450" x2="3139" y2="520" /> 
+                <line x1="3389" y1="450" x2="3389" y2="520" /> 
+                <line x1="3639" y1="450" x2="3639" y2="520" /> 
+                <line x1="3889" y1="450" x2="3889" y2="520" /> 
+		<!-- === 💡 四房：呂春成與巫素蘭離婚分支（右移2框+完美幾何校準版） === -->
+<line x1="4867" y1="300" x2="5106" y2="300" stroke-dasharray="5,5" /> <!-- 夫妻水平婚姻線 -->
+<line x1="4986.5" y1="300" x2="4986.5" y2="450" /> <!-- 垂直落線精準由婚姻正中 (4986.5) 筆直落下 -->
+<line x1="4697" y1="450" x2="5276" y2="450" /> <!-- 子代分流橫線 -->
+<line x1="4697" y1="450" x2="4697" y2="520" /> <!-- 筆直刺入 呂婉婷 正中心 (4608+89=4697) -->
+<line x1="4890" y1="450" x2="4890" y2="520" /> <!-- 筆直刺入 呂少君 正中心 (4801+89=4890) -->
+<line x1="5083" y1="450" x2="5083" y2="520" /> <!-- 筆直刺入 呂淑婷 正中心 (4994+89=5083) -->
+<line x1="5276" y1="450" x2="5276" y2="520" /> <!-- 筆直刺入 呂維浩 正中心 (5187+89=5276) -->
+
+<!-- 💡 四房大女兒：洪淨池 與 呂婉婷 分支（符合 105px 夫妻空隙、193px 子代間距） -->
+<line x1="4414" y1="570" x2="4697" y2="570" /> <!-- 夫妻水平婚姻線 -->
+<line x1="4555.5" y1="570" x2="4555.5" y2="660" /> <!-- 孫輩總落線中軸 (4555.5) -->
+<line x1="4459" y1="660" x2="4652" y2="660" /> <!-- 孫輩分流橫線 -->
+<line x1="4459" y1="660" x2="4459" y2="720" /> <!-- 筆直刺入 洪牧懷 正中心 (4370+89=4459) -->
+<line x1="4652" y1="660" x2="4652" y2="720" /> <!-- 筆直刺入 洪牧梨 正中心 (4563+89=4652) -->
+
+<!-- === 💡 新增五房：呂彩美直系後代分支（比照向秐蓁單親乾淨對稱版） === -->
+<line x1="5600" y1="300" x2="5600" y2="450" /> <!-- 💡 垂直落線精準從呂彩美正下方 (5600) 筆直拉下 -->
+<line x1="5503.5" y1="450" x2="5696.5" y2="450" /> <!-- 兒子總分流橫線（左右死鎖 193px 展開） -->
+<line x1="5503.5" y1="450" x2="5503.5" y2="520" /> <!-- 💡 筆直刺入 大兒子 陳鶴仁 正中心 (5414.5+89=5503.5) -->
+<line x1="5696.5" y1="450" x2="5696.5" y2="520" /> <!-- 💡 筆直刺入 小兒子 陳煌助 正中心 (5607.5+89=5696.5) -->
+
+                <!-- === 六房核心：許錫金與呂采妮分支 === -->
+                <line x1="6222" y1="300" x2="6662" y2="300" stroke-dasharray="5,5" /> 
+                <line x1="6430" y1="300" x2="6430" y2="450" /> 
+                <line x1="6222" y1="450" x2="6662" y2="450" /> 
+                <line x1="6222" y1="450" x2="6222" y2="520" /> 
+                <line x1="6662" y1="450" x2="6662" y2="520" /> 
+
+                <!-- 左側第四代：滕彥君 與 許晊銘（中點 6103.5） -->
+                <line x1="5984" y1="570" x2="6223" y2="570" /> 
+                <line x1="6103.5" y1="570" x2="6103.5" y2="660" /> 
+                <line x1="5910.5" y1="660" x2="6296.5" y2="660" /> 
+                <line x1="5910.5" y1="660" x2="5910.5" y2="720" /> 
+                <line x1="6103.5" y1="660" x2="6103.5" y2="720" /> 
+                <line x1="6296.5" y1="660" x2="6296.5" y2="720" /> 
+
+                <!-- 右側第四代：許瑋芬 與 賀思明（💡 全面校準：完美婚姻中點 6758.5） -->
+<line x1="6639" y1="570" x2="6878" y2="570" /> <!-- 夫妻水平婚姻線 -->
+<line x1="6758.5" y1="570" x2="6758.5" y2="660" /> <!-- 孫輩總落線筆直從正中央落下 -->
+<line x1="6565.5" y1="660" x2="6951.5" y2="660" /> <!-- 孫輩分流橫線（左右死鎖 193px） -->
+<line x1="6565.5" y1="660" x2="6565.5" y2="720" /> <!-- 💡 筆直刺入 許莉岑 正中心 (6476.5+89=6565.5) -->
+<line x1="6758.5" y1="660" x2="6758.5" y2="720" /> <!-- 💡 筆直刺入 許嘉丞 正中心 (6669.5+89=6758.5) -->
+<line x1="6951.5" y1="660" x2="6951.5" y2="720" /> <!-- 💡 筆直刺入 許嘉安 正中心 (6862.5+89=6951.5) -->
+                <!-- === 七房：呂美瑤與向光華分支 === -->
+                <line x1="7617" y1="300" x2="7722" y2="300" /> 
+                <line x1="7691.5" y1="300" x2="7691.5" y2="520" /> 
+                <line x1="7691.5" y1="570" x2="7691.5" y2="660" /> 
+                <line x1="7591.5" y1="660" x2="7791.5" y2="660" /> 
+                <line x1="7591.5" y1="660" x2="7591.5" y2="720" /> 
+                <line x1="7791.5" y1="660" x2="7791.5" y2="720" /> 
+
+                <!-- === 💡 八房：呂文正與戴佩伶分支（完美直系置中對齊版） === -->
+<line x1="8421" y1="300" x2="8660" y2="300" /> <!-- 夫妻水平婚姻線 -->
+<line x1="8540.5" y1="300" x2="8540.5" y2="450" /> <!-- 💡 垂直落線精準從父母正中間 (8540.5) 筆直落下 -->
+<line x1="8430" y1="450" x2="8653" y2="450" /> <!-- 兒女總分流橫線（死鎖 193px 展開） -->
+<line x1="8430" y1="450" x2="8430" y2="520" /> <!-- 💡 筆直刺入 呂旻哲 正中心 (8355+89=8444) -->
+<line x1="8653" y1="450" x2="8653" y2="520" /> <!-- 💡 筆直刺入 呂畇蓁 正中心 (8548+89=8637) -->
+
+            </g>
+        </svg>
+
+        <!-- 【第一層】 -->
+        <div class="member-card" style="top: 40px; left: 6459px;"><div class="photo-placeholder"><img src="images/LU Tsai-Hsing.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">呂再興</div><div class="birthday">1930/01/01</div><div class="story-data" style="display:none;">大家長。</div></div>
+        <div class="member-card" style="top: 40px; left: 6689px;"><div class="photo-placeholder"><img src="images/Huang Yu-Ying.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">黃玉英</div><div class="birthday">1935/05/10</div><div class="story-data" style="display:none;">大媽媽。</div></div>
+
+        <!-- 【第二層】 -->
+        <div class="member-card" style="top: 250px; left: 961px;"><div class="photo-placeholder">特寫</div><div class="name">呂天貴</div><div class="birthday">1958/03/12</div><div class="story-data" style="display:none;">大兒子。</div></div>
+        <div class="member-card" style="top: 250px; left: 1961px;"><div class="photo-placeholder">特寫</div><div class="name">呂彩鳳</div><div class="birthday">1961/07/19</div><div class="story-data" style="display:none;">大女兒。</div></div>
+        <div class="member-card" style="top: 250px; left: 3217px;"><div class="photo-placeholder">特寫</div><div class="name">夏素真</div><div class="birthday">1971/04/05</div><div class="story-data" style="display:none;">離婚配偶。</div></div>
+        <div class="member-card" style="top: 250px; left: 3456px;"><div class="photo-placeholder">特寫</div><div class="name">呂春狼</div><div class="birthday">1959/11/14</div><div class="story-data" style="display:none;">二兒子。</div></div>
+      <div class="member-card" style="top: 250px; left: 4778px;"><div class="photo-placeholder">特寫</div><div class="name">巫素蘭</div><div class="birthday">1965/02/18</div><div class="story-data" style="display:none;">四房離婚配偶。</div></div>
+<div class="member-card" style="top: 250px; left: 5017px;"><div class="photo-placeholder">特寫</div><div class="name">呂春成</div><div class="birthday">1960/12/25</div><div class="story-data" style="display:none;">三兒子。</div></div>
+
+
+	<div class="member-card" style="top: 250px; left: 5511px;"><div class="photo-placeholder">特寫</div><div class="name">呂彩美</div><div class="birthday">1970/06/18</div><div class="story-data" style="display:none;">三女兒。</div></div>
+        <div class="member-card" style="top: 250px; left: 6134px;"><div class="photo-placeholder">特寫</div><div class="name">許錫金</div><div class="birthday">1960/08/20</div><div class="story-data" style="display:none;">好父親。</div></div>
+        <div class="member-card" id="center-focus" style="top: 250px; left: 6550px;"><div class="photo-placeholder"><img src="images/Lu-chini.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">呂采妮</div><div class="birthday">1964/11/11</div><div class="story-data" style="display:none;">核心主軸。</div></div>
+        <div class="member-card" style="top: 250px; left: 7483px;"><div class="photo-placeholder">特寫</div><div class="name">呂美瑤</div><div class="birthday">1973/05/30</div><div class="story-data" style="display:none;">小女兒。</div></div>
+        <div class="member-card" style="top: 250px; left: 7722px;"><div class="photo-placeholder">特寫</div><div class="name">向光華</div><div class="birthday">1970/02/14</div><div class="story-data" style="display:none;">美瑤配偶。</div></div>
+        <div class="member-card" style="top: 250px; left: 8332px;"><div class="photo-placeholder">特寫</div><div class="name">呂文正</div><div class="birthday">1968/09/05</div><div class="story-data" style="display:none;">小兒子。</div></div>
+        <div class="member-card" style="top: 250px; left: 8571px;"><div class="photo-placeholder">特寫</div><div class="name">戴佩伶</div><div class="birthday">1971/11/22</div><div class="story-data" style="display:none;">文正配偶。</div></div>
+        <!-- 【第三層】 -->
+        <div class="member-card" style="top: 520px; left: 2800px;"><div class="photo-placeholder">特寫</div><div class="name">呂如潔</div><div class="birthday">1985/01/15</div><div class="story-data" style="display:none;">春狼長女。</div></div>
+        <div class="member-card" style="top: 520px; left: 3050px;"><div class="photo-placeholder">特寫</div><div class="name">呂如萍</div><div class="birthday">1987/03/22</div><div class="story-data" style="display:none;">春狼次女。</div></div>
+        <div class="member-card" style="top: 520px; left: 3300px;"><div class="photo-placeholder">特寫</div><div class="name">呂靜怡</div><div class="birthday">1989/08/11</div><div class="story-data" style="display:none;">春狼三女..</div></div>
+        <div class="member-card" style="top: 520px; left: 3550px;"><div class="photo-placeholder">特寫</div><div class="name">呂嘉琪</div><div class="birthday">1992/10/04</div><div class="story-data" style="display:none;">春狼四女。</div></div>
+        <div class="member-card" style="top: 520px; left: 3800px;"><div class="photo-placeholder">特寫</div><div class="name">呂慧君</div><div class="birthday">1995/12/19</div><div class="story-data" style="display:none;">春狼小女。</div></div>
+        <div class="member-card" style="top: 520px; left: 5895px;"><div class="photo-placeholder"><img src="images/Teng yann-jiun.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">滕彥君</div><div class="birthday">1990/04/16</div><div class="story-data" style="display:none;">溫柔成員。</div></div>
+        <div class="member-card" style="top: 520px; left: 6134px;"><div class="photo-placeholder"><img src="images/Hsu chih-ming.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">許晊銘</div><div class="birthday">1989/11/08</div><div class="story-data" style="display:none;">熱愛科技。</div></div>
+        <div class="member-card" style="top: 520px; left: 6550px;"><div class="photo-placeholder"><img src="images/Hsu wei-fen.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">許瑋芬</div><div class="birthday">1982/01/26</div><div class="story-data" style="display:none;">美感設計。</div></div>
+        <div class="member-card" style="top: 520px; left: 6789px;"><div class="photo-placeholder"><img src="images/Max.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">賀思明</div><div class="birthday">1985/04/27</div><div class="story-data" style="display:none;">性格穩重。</div></div>
+        <div class="member-card" style="top: 520px; left: 7602.5px;"><div class="photo-placeholder">特寫</div><div class="name">向秐蓁</div><div class="birthday">1987/06/04</div><div class="story-data" style="display:none;">美瑤女兒。</div></div>
+        <div class="member-card" style="top: 520px; left: 8332px;"><div class="photo-placeholder">特寫</div><div class="name">呂旻哲</div><div class="birthday">1996/02/11</div><div class="story-data" style="display:none;">文正兒子。</div></div>
+        <div class="member-card" style="top: 520px; left: 8571px;"><div class="photo-placeholder">特寫</div><div class="name">呂畇蓁</div><div class="birthday">1998/08/24</div><div class="story-data" style="display:none;">文正女兒。</div></div>
+<!-- 💡 洪淨池與呂婉婷卡片空隙精準鎖死 105px 鐵律 -->
+<div class="member-card" style="top: 520px; left: 4325px;"><div class="photo-placeholder">特寫</div><div class="name">洪淨池</div><div class="birthday">1982/11/05</div><div class="story-data" style="display:none;">婉婷配偶。</div></div>
+<div class="member-card" style="top: 520px; left: 4608px;"><div class="photo-placeholder">特寫</div><div class="name">呂婉婷</div><div class="birthday">1986/04/20</div><div class="story-data" style="display:none;">四房長女。</div></div>
+<div class="member-card" style="top: 520px; left: 4801px;"><div class="photo-placeholder">特寫</div><div class="name">呂少君</div><div class="birthday">1988/09/15</div><div class="story-data" style="display:none;">四房次女。</div></div>
+<div class="member-card" style="top: 520px; left: 4994px;"><div class="photo-placeholder">特寫</div><div class="name">呂淑婷</div><div class="birthday">1991/07/07</div><div class="story-data" style="display:none;">四房三女。</div></div>
+<div class="member-card" style="top: 520px; left: 5187px;"><div class="photo-placeholder">特寫</div><div class="name">呂維浩</div><div class="birthday">1994/03/30</div><div class="story-data" style="display:none;">四房小兒子。</div></div>
+<!-- 💡 五房第三代：以 5600px 母親中軸線為中心，左右展開 193px 黃金間距 -->
+<div class="member-card" style="top: 520px; left: 5414.5px;"><div class="photo-placeholder">特寫</div><div class="name">陳鶴仁</div><div class="birthday">1992/08/14</div><div class="story-data" style="display:none;">彩美大兒子。</div></div>
+<div class="member-card" style="top: 520px; left: 5607.5px;"><div class="photo-placeholder">特寫</div><div class="name">陳煌助</div><div class="birthday">1995/11/23</div><div class="story-data" style="display:none;">彩美小兒子。</div></div>
+
+        <!-- 【第四層】 -->
+        <div class="member-card" style="top: 720px; left: 5821.5px;"><div class="photo-placeholder"><img src="images/Hsu lan-hsin.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">許嵐馨</div><div class="birthday">2020/01/31</div><div class="story-data" style="display:none;">大姐。</div></div>
+       <div class="member-card" style="top: 720px; left: 6014.5px;"><div class="photo-placeholder"><img src="images/Hsu lan-ching.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">許嵐靖</div><div class="birthday">2021/10/13</div><div class="story-data" style="display:none;">小帥哥。</div></div>
+        <div class="member-card" style="top: 720px; left: 6207.5px;"><div class="photo-placeholder"><img src="images/Lan-baby.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">許嵐蘊</div><div class="birthday">2026/04/19</div><div class="story-data" style="display:none;">小寶貝。</div></div>
+<!-- 【第四層】：💡 許瑋芬子代全新幾何校準版，一像素不差絕對置中 -->
+<div class="member-card" style="top: 720px; left: 6476.5px;"><div class="photo-placeholder"><img src="images/Hsu li-cen.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">許莉岑</div><div class="birthday">2015/03/28</div><div class="story-data" style="display:none;">大女兒。</div></div>
+<div class="member-card" style="top: 720px; left: 6669.5px;"><div class="photo-placeholder"><img src="images/Hsu jia-cheng.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">許嘉丞</div><div class="birthday">2016/07/21</div><div class="story-data" style="display:none;">活潑小帥哥。</div></div>
+<div class="member-card" style="top: 720px; left: 6862.5px;"><div class="photo-placeholder"><img src="images/Hsu jia-an.jpg" style="width:100%;height:100%;object-fit:cover;"></div><div class="name">許嘉安</div><div class="birthday">2021/05/17</div><div class="story-data" style="display:none;">開心果。</div></div>
+
+        <div class="member-card" style="top: 720px; left: 7502.5px;"><div class="photo-placeholder">特寫</div><div class="name">向詩丹</div><div class="birthday">2015/07/19</div><div class="story-data" style="display:none;">向秐蓁的大女兒。</div></div>
+        <div class="member-card" style="top: 720px; left: 7702.5px;"><div class="photo-placeholder">特寫</div><div class="name">蘇宣妤</div><div class="birthday">2022/07/29</div><div class="story-data" style="display:none;">向秐蓁的小女兒。</div></div>
+	<!-- 💡 四房第四代：同步平移校準，對齊 4155px 婚姻中點 -->
+<div class="member-card" style="top: 720px; left: 4370px;"><div class="photo-placeholder">特寫</div><div class="name">洪牧懷</div><div class="birthday">2014/05/12</div><div class="story-data" style="display:none;">婉婷大兒子。</div></div>
+<div class="member-card" style="top: 720px; left: 4563px;"><div class="photo-placeholder">特寫</div><div class="name">洪牧梨</div><div class="birthday">2017/10/25</div><div class="story-data" style="display:none;">婉婷小兒子。</div></div>
+
+    </div>
+
+    <!-- 外掛大視窗 Modal -->
+            <!-- =========================================================
+       💡 照片大氣放大版：自動高度、防擠壓、支援上下滾動的智能互動大視窗
+    ========================================================= -->
+    <div id="familyCustomModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); display: none; justify-content: center; align-items: center; z-index: 200000; box-sizing: border-box;">
+        <!-- 💡 幾何微調：max-width 由 600px 拓寬至 680px，讓整體視覺更寬敞大氣 -->
+        <div style="background: white; padding: 40px; border-radius: 24px; max-width: 680px; width: 90%; max-height: 85vh; overflow-y: auto; position: relative; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.3); color: #2d3748; font-family: sans-serif; box-sizing: border-box; display: flex; flex-direction: column; align-items: center;">
+
+            <!-- 右上角關閉按鈕 -->
+            <button id="familyCloseBtn" style="position: absolute; top: 15px; right: 15px; font-size: 28px; background: none; border: none; cursor: pointer; color: #a0aec0; line-height: 1; z-index: 10;">&times;</button>
+        
+            <!-- 💡 核心修改：大相框由 270px × 270px 完美升級放大至 340px × 340px 巨幅立體規格 -->
+            <div id="familyLargePhoto" style="width: 340px; height: 340px; border-radius: 12px; background-color: #cbd5e0; margin: 10px auto 25px auto; border: 6px solid #ffffff; box-shadow: 0 8px 20px rgba(0,0,0,0.18); overflow: hidden; display: flex; align-items: center; justify-content: center; color: #718096; font-size: 18px; box-sizing: border-box; flex-shrink: 0;">大特寫照</div>
+
+            <h2 id="familyName" style="font-size: 28px; font-weight: bold; margin: 0 0 5px 0; flex-shrink: 0;">姓名</h2>
+            <div id="familyBday" style="color: #718096; font-size: 15px; margin-bottom: 20px; flex-shrink: 0;">生日</div>
+            
+            <!-- width: 100% 撐滿，讓文字完美適應放大的寬度 -->
+            <div id="familyStory" style="width: 100%; font-size: 16px; line-height: 1.7; color: #4a5568; text-align: left; border-top: 1px solid #e2e8f0; padding-top: 15px; white-space: pre-line;">故事內容</div>
+        </div>
+    </div>
+
+   <!-- 💡 步驟 2-1：火車頭接軌！直接在主腳本正上方引入故事檔案，絕不漏接 -->
+<script src="family_stories.js"></script>
+
+<!-- 💡 步驟 2-2：網頁主控制腳本 -->
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        var cards = document.querySelectorAll('.member-card');
+        var modal = document.getElementById('familyCustomModal');
+        var photo = document.getElementById('familyLargePhoto');
+        var nameEl = document.getElementById('familyName');
+        var bdayEl = document.getElementById('familyBday');
+        var storyEl = document.getElementById('familyStory');
+        var closeBtn = document.getElementById('familyCloseBtn');
+
+        // 自動讀取剛才在正上方牽進來的外部故事變數，若找不到則自動變空物件防錯
+        var storyDatabase = typeof familyStoriesData !== 'undefined' ? familyStoriesData : {};
+
+                // 💡 全家族 43 位成員「一對一精準相簿索引陣列」——依 HTML 出現順序嚴格對齊
+        var imgs = [
+            "LU Tsai-Hsing.jpg", "Huang Yu-Ying.jpg", // 【第一層】（2人）
+            
+            // 【第二層】（12人）依您的 HTML 順序：天貴、彩鳳、素真、春狼、素蘭、春成、彩美、錫金、采妮...
+            "lu-1st-son.jpg",      // 呂天貴
+            "lu-1st-daughter.jpg", // 呂彩鳳
+            "lu-2nd-wife.jpg",     // 夏素真
+            "lu-2nd-son.jpg",      // 呂春狼
+            "wu-4th-wife.jpg",     // 巫素蘭
+            "lu-4th-son.jpg",      // 呂春成
+            "lu-3rd-daughter.jpg", // 呂彩美
+            "xu-dad.jpg",          // 許錫金
+            "Lu-chini.jpg",        // 💡 完美嚙合！第11個位置，精準回歸 呂采妮！
+            "lu-5th-daughter.jpg", // 呂美瑤
+            "lu-5th-husband.jpg",  // 向光華
+            "lu-4th-son-old.jpg",  // 呂文正
+            "lu-4th-wife-old.jpg", // 戴佩伶
+            
+            
+             // === 【第三層】完美對齊您的 HTML 出現順序 ===
+            "lu-2nd-son-k1.jpg",        // 呂如潔
+            "lu-2nd-son-k2.jpg",        // 呂如萍
+            "lu-2nd-son-k3.jpg",        // 呂靜怡
+            "lu-2nd-son-k4.jpg",        // 呂嘉琪
+            "lu-2nd-son-k5.jpg",        // 呂慧君
+            "Teng yann-jiun.jpg",            // 滕彥君
+            "Hsu chih-ming.jpg",               // 許晊銘
+            "Hsu wei-fen.jpg",          // 💡 完美咬合！許瑋芬大照片絕對就位！
+            "Max.jpg",           // 賀思明
+            "lu-5th-daughter-k1.jpg",   // 向秐蓁
+            "lu-4th-son-k1.jpg",        // 呂旻哲
+            "lu-4th-son-k2.jpg",        // 呂畇蓁
+            "hong-husband.jpg",         // 洪淨池
+            "lu-4th-daughter-1.jpg",    // 呂婉婷
+            "lu-4th-daughter-2.jpg",    // 呂少君
+            "lu-4th-daughter-3.jpg",    // 呂淑婷
+            "lu-4th-son-k.jpg",         // 呂維浩
+            "chen-son-1.jpg",           // 陳鶴仁
+            "chen-son-2.jpg",           // 陳煌助
+
+            // === 【第四層】完美對齊您的 HTML 出現順序 ===
+            "Hsu lan-hsin.jpg",                // 許嵐馨
+            "Hsu lan-ching.jpg",                // 許嵐靖
+            "Lan-baby.jpg",                // 許嵐蘊
+            "Hsu li-cen.jpg",                // 許莉岑
+            "Hsu jia-cheng.jpg",                // 許嘉丞
+            "Hsu jia-an.jpg",                // 許嘉安
+            "lu-5th-grandkid-1.jpg",    // 向詩丹
+            "lu-5th-grandkid-2.jpg",    // 蘇宣妤
+            "hong-grandkid-1.jpg",      // 洪牧懷
+            "hong-grandkid-2.jpg"       // 洪牧梨
+        ];
+        cards.forEach((card, idx) => {
+            card.addEventListener('click', function(e) {
+                var n = card.querySelector('.name') ? card.querySelector('.name').innerText : "成員";
+                var b = card.querySelector('.birthday') ? card.querySelector('.birthday').innerText : "";
+                var imgName = imgs[idx] || "default.jpg";
+
+                // 雙軌防錯：故事檔案有寫就讀檔案，檔案沒寫就抓卡片內原本的舊故事
+                var inlineStory = card.querySelector('.story-data') ? card.querySelector('.story-data').innerText : "暫無簡介";
+                var s = storyDatabase[n] || inlineStory;
+
+                photo.innerHTML = "<img src='images/" + imgName + "' alt='" + n + "' style='width:100%;height:100%;object-fit:cover;' onerror='this.style.display=\"none\";this.parentNode.innerText=\"大特寫照空間\";'>";
+                nameEl.innerText = n;
+                bdayEl.innerText = b ? "生日：" + b : "";
+                storyEl.innerText = s;
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeBtn.onclick = function() { modal.style.display = 'none'; };
+        modal.onclick = function(e) { if (e.target === modal) modal.style.display = 'none'; };
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') modal.style.display = 'none'; });
+
+        setTimeout(() => { window.scrollTo({ left: 6050, behavior: 'auto' }); }, 100);
+    });
+</script>
+
+</body>
+</html>
+
